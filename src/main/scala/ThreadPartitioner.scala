@@ -439,7 +439,8 @@ class ThreadPartitioner(pg: PartGraph, opt: OptFlags) extends LazyLogging {
 
     val hmetis_input_filename = "parts.hmetis"
 
-    val kahypar_path = "/Users/xipingcong/Library/CloudStorage/OneDrive-个人/CXP/ICT/研2/故障仿真加速/essent/utils/bin/KaHyPar"
+    // val kahypar_path = "/Users/xipingcong/Library/CloudStorage/OneDrive-个人/CXP/ICT/研2/故障仿真加速/essent/utils/bin/KaHyPar"
+    val kahypar_path = "/home/congxiping/kahypar/build/kahypar/application/KaHyPar"
     //	val kahypar_path = "KaHyPar"
     val kahypar_config_filename = "KaHyPar.config"
     //  val kahypar_preset = "/Users/hwang/project/kahypar/config/km1_kKaHyPar_sea20.ini"
