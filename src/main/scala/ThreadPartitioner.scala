@@ -539,12 +539,10 @@ class ThreadPartitioner(pg: PartGraph, opt: OptFlags) extends LazyLogging {
         }
 
         //  cxp
-        println(pg.trees)
-        println(pg.pieces)
-        println(pg.idToTreeID)
-        println(pg.sinkNodes)
-        println(pg.inNeigh)
-        println(pg.outNeigh)
+        for (i <- pg.outNeigh.indices) {
+            println(i)
+            println(pg.outNeigh(i))
+        }
 
         // Print out weight calculation trace
 
