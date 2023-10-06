@@ -89,6 +89,7 @@ class PartGraph extends StatementGraph {
 
         trees.clear()
         trees ++= collectedParts //  更新树结构
+        println(collectedParts)
     }
 
     def initPieces() = {
