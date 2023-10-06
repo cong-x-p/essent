@@ -89,7 +89,6 @@ class PartGraph extends StatementGraph {
 
         trees.clear()
         trees ++= collectedParts //  更新树结构
-        println(collectedParts)
     }
 
     def initPieces() = {
@@ -547,6 +546,7 @@ class ThreadPartitioner(pg: PartGraph, opt: OptFlags) extends LazyLogging {
             println(i)
             println(pg.idToStmt(i))
         }
+        println(pg.sinkNodes)
 
         // Print out weight calculation trace
 
