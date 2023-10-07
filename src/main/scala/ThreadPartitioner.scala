@@ -108,6 +108,7 @@ class PartGraph extends StatementGraph {
                 pieces(pid) += seed
                 idToPieceID(seed) = pid
                 val connectedVertecies = (inNeigh(seed) ++ outNeigh(seed)).filter(idToPieceID(_) == -1)
+                println(connectedVertecies)
                 val samePieceVertecies = connectedVertecies.filter(vid => {
                     idToTreeID(vid) == idToTreeID(seed)
                 })
@@ -547,7 +548,6 @@ class ThreadPartitioner(pg: PartGraph, opt: OptFlags) extends LazyLogging {
         println(pg.idToTreeID)
         println(pg.pieces)
         println(pg.nameToID)
-        println(pg.sinkNodes)
         pg.sinkNodes.zipWithIndex.foreach{
             case (sinkNode, pid) => {
                 println(sinkNode + " " + pid)
