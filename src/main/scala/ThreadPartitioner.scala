@@ -122,8 +122,6 @@ class PartGraph extends StatementGraph {
         }
         } //  为每个sinkNode创建一个piece，任何调用findPiece(pid)(sinkNode)查找每个与该sinkNode连接的点并划分到一个piece里
 
-        println(pieces)
-
         // Collect pieces for all other nodes
         do {
             val unvisited = idToPieceID.indices.filter(idToPieceID(_) == -1)
@@ -549,10 +547,7 @@ class ThreadPartitioner(pg: PartGraph, opt: OptFlags) extends LazyLogging {
         println(pg.idToTreeID)
         println(pg.pieces)
         println(pg.nameToID)
-        for (i <- pg.idToStmt.indices) {
-            println(i)
-            println(pg.idToStmt(i))
-        }
+        println(pg.sinkNodes)
 
         // Print out weight calculation trace
 
