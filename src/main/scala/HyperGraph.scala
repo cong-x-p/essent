@@ -28,7 +28,6 @@ class HyperGraph {
     def addEdge(edge: ArrayBuffer[Int], weight: Int): Unit = {
         assert(edge.nonEmpty)
         val edge_id = edges.length
-        println(edge)
 
         edges += edge
         edgeWeight += weight
