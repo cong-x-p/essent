@@ -382,6 +382,7 @@ class PartGraph extends StatementGraph {
 
         // Add edges
         for (elem <- pieces.indices) {
+            println(trees.length)
             if (elem >= trees.length) {
                 // For all edges
                 val edgeWeight = pieceWeights(elem)
