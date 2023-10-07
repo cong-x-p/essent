@@ -375,9 +375,9 @@ class PartGraph extends StatementGraph {
                 (pieceWeight / pinCount)
             }
             }
-            println(trees(elem))
 
             hg.addNode(elem, weight + connectPieceWeights.sum)
+            print(hg.nodes)
         } //  遍历trees中的所有节点，weight为一部分子树（构成piece）的权重，connectPieces包含了当前子树中包含的所有pieces，因为pieces中的节点可能有重合
         //  connectPieceWeights赋值为针对connectPieces中所有pieces计算出的权重，为当前elem子树的权重 + 当前子树中所有piece连接的边的数量/piece自己的权重总和
 
