@@ -122,6 +122,8 @@ class PartGraph extends StatementGraph {
         }
         } //  为每个sinkNode创建一个piece，任何调用findPiece(pid)(sinkNode)查找每个与该sinkNode连接的点并划分到一个piece里
 
+        println(pieces)
+
         // Collect pieces for all other nodes
         do {
             val unvisited = idToPieceID.indices.filter(idToPieceID(_) == -1)
