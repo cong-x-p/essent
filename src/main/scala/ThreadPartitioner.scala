@@ -386,6 +386,7 @@ class PartGraph extends StatementGraph {
                 // For all edges
                 val edgeWeight = pieceWeights(elem)
                 val edgeNodes = idToTreeID(pieces(elem).head).to[ArrayBuffer]
+                println(pieces(elem).head)
                 println(edgeNodes)
 
                 hg.addEdge(edgeNodes, edgeWeight)
