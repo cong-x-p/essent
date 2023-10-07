@@ -548,6 +548,11 @@ class ThreadPartitioner(pg: PartGraph, opt: OptFlags) extends LazyLogging {
         println(pg.pieces)
         println(pg.nameToID)
         println(pg.sinkNodes)
+        pg.sinkNodes.zipWithIndex.foreach{
+            case (sinkNode, pid) => {
+                println(sinkNode + " " + pid)
+            }
+        }
 
         // Print out weight calculation trace
 
