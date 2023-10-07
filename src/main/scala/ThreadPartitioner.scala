@@ -101,6 +101,9 @@ class PartGraph extends StatementGraph {
         }
         } //  利用partID遍历trees中所有树中的所有节点的nodeID，将partID添加到idToTreeID(nodeID)对应的BitSet中
 
+        // cxp
+        println(idToTreeID)
+
 
         // Assuming pieces(pid) is an empty BitSet
         def findPiece(pid: NodeID)(seed: NodeID): Unit = {
