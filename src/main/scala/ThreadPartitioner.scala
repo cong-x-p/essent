@@ -377,7 +377,6 @@ class PartGraph extends StatementGraph {
             }
 
             hg.addNode(elem, weight + connectPieceWeights.sum)
-            println(hg.nodes)
         } //  遍历trees中的所有节点，weight为一部分子树（构成piece）的权重，connectPieces包含了当前子树中包含的所有pieces，因为pieces中的节点可能有重合
         //  connectPieceWeights赋值为针对connectPieces中所有pieces计算出的权重，为当前elem子树的权重 + 当前子树中所有piece连接的边的数量/piece自己的权重总和
 
@@ -389,6 +388,8 @@ class PartGraph extends StatementGraph {
                 val edgeNodes = idToTreeID(pieces(elem).head).to[ArrayBuffer]
 
                 hg.addEdge(edgeNodes, edgeWeight)
+                println(hg.nodes)
+                println(hg.edges)
             }
         } //  遍历pieces中所有piece，如果当前piece大于树的长度则表明在处理不属于该树的piece，edgeWeight为当前piece的权重，edgeNodes为与当前piece头节点所属的树节点，addEdge
     }
@@ -548,8 +549,6 @@ class ThreadPartitioner(pg: PartGraph, opt: OptFlags) extends LazyLogging {
             println(pg.idToStmt(i))
         }
         println(pg.sinkNodes)
-        println(pg.hg.nodes)
-        println(pg.hg.edges)
 
         // Print out weight calculation trace
 
