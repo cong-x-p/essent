@@ -23,6 +23,7 @@ class HyperGraph {
         }
 
         nodeWeight(id) = weight
+        println(nodes)
     }
 
     def addEdge(edge: ArrayBuffer[Int], weight: Int): Unit = {
