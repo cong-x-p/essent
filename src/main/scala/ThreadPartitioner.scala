@@ -386,10 +386,11 @@ class PartGraph extends StatementGraph {
                 // For all edges
                 val edgeWeight = pieceWeights(elem)
                 val edgeNodes = idToTreeID(pieces(elem).head).to[ArrayBuffer]
+                println(edgeNodes)
 
                 hg.addEdge(edgeNodes, edgeWeight)
-                println(hg.nodes)
                 println(hg.edges)
+                println(hg.nodes)
             }
         } //  遍历pieces中所有piece，如果当前piece大于树的长度则表明在处理不属于该树的piece，edgeWeight为当前piece的权重，edgeNodes为与当前piece头节点所属的树节点，addEdge
     }
