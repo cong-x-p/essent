@@ -508,7 +508,6 @@ class ThreadPartitioner(pg: PartGraph, opt: OptFlags) extends LazyLogging {
         logger.info("Update hyper graph") // 调用updateHyperGraph，类pg的一个成员方法，并计算调用时间
         val startTime_hg = System.currentTimeMillis()
         pg.updateHyperGraph()
-        println(pg.hg.nodes)
         val endTime_hg = System.currentTimeMillis()
         val elapse_hg = (endTime_hg - startTime_hg)
         logger.info(s"Done hyper graph updating in $elapse_hg ms")
