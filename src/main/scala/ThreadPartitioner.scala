@@ -369,6 +369,8 @@ class PartGraph extends StatementGraph {
         for (elem <- trees.indices) {
             val weight = pieceWeights(elem)
             val connectPieces = (trees(elem).map(idToPieceID) - elem).toSeq
+            // cxp
+            println(connectPieces)
             val connectPieceWeights = connectPieces.map { pid => {
                 val pinCount = hePinCount(pid)
                 val pieceWeight = pieceWeights(pid)
