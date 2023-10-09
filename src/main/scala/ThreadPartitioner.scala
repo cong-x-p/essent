@@ -732,6 +732,8 @@ class ThreadPartitioner(pg: PartGraph, opt: OptFlags) extends LazyLogging {
             "--objective", "km1",
         )
 
+        println(desiredParts.toString)
+
         val r = os.proc(cmd).call(check = false)
 
         println("KayHyPar output:")
