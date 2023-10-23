@@ -128,6 +128,8 @@ class PartGraph extends StatementGraph {
         // Collect pieces for all other nodes
         do {
             val unvisited = idToPieceID.indices.filter(idToPieceID(_) == -1)
+            // cxp
+            println("unvisited: " + unvisited)
             val newPid = pieces.length
             pieces.append(BitSet())
             findPiece(newPid)(unvisited.head)
