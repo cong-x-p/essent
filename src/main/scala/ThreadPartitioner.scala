@@ -111,6 +111,9 @@ class PartGraph extends StatementGraph {
                 val samePieceVertecies = connectedVertecies.filter(vid => {
                     idToTreeID(vid) == idToTreeID(seed)
                 })
+                // cxp
+                println(connectedVertecies)
+                println(samePieceVertecies)
                 samePieceVertecies foreach findPiece(pid)
             }
         } //  若传入的seed没有被分配，则把seed放入参数中pid代表的piece中，再对与seed相连的不属于任何piece且属于同一个tree的节点调用该函数
@@ -389,8 +392,8 @@ class PartGraph extends StatementGraph {
 
                 hg.addEdge(edgeNodes, edgeWeight)
                 // cxp
-                println("nodes: " + hg.nodes)
-                println("edges: " + hg.edges)
+//                println("nodes: " + hg.nodes)
+//                println("edges: " + hg.edges)
             }
         } //  遍历pieces中所有piece，如果当前piece大于树的长度则表明在处理不属于该树的piece，edgeWeight为当前piece的权重，edgeNodes为与当前piece头节点所属的树节点，addEdge
     }
