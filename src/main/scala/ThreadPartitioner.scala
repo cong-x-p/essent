@@ -112,8 +112,8 @@ class PartGraph extends StatementGraph {
                     idToTreeID(vid) == idToTreeID(seed)
                 })
                 // cxp
-                println(connectedVertecies)
-                println(samePieceVertecies)
+                println("connectedVertecies: " + connectedVertecies)
+                println("samePieceVertecies: " + samePieceVertecies)
                 samePieceVertecies foreach findPiece(pid)
             }
         } //  若传入的seed没有被分配，则把seed放入参数中pid代表的piece中，再对与seed相连的不属于任何piece且属于同一个tree的节点调用该函数
