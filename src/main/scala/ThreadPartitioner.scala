@@ -304,8 +304,9 @@ class PartGraph extends StatementGraph {
                     case AsyncResetType => 2
                     case _ => 0
                 }
-                println(c.expr + " " + valueWeight + " " + declWeight)
+                println(c.loc)
                 println(c.loc.tpe)
+                println(c.expr + " " + valueWeight + " " + declWeight)
                 declWeight + valueWeight
             }
 
