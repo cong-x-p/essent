@@ -348,8 +348,8 @@ class PartGraph extends StatementGraph {
 
                 val currentWeight = idToNodeWeight(sinkId)
                 // cxp
-//                println("sinkID: " + sinkId)
-//                println(currentWeight)
+                println("sinkID: " + sinkId)
+                println(currentWeight)
 
                 currentWeight + ((inNeigh(sinkId) filter validNodes filter piece) map stmtWeight).sum
             }
@@ -363,6 +363,10 @@ class PartGraph extends StatementGraph {
 
     def updateHyperGraph(): Unit = {
         val pieceWeights = pieces.map(calculatePieceWeight) //  对所有piece进行权重计算
+        // cxp
+        for (elem <- pieceWeights.indices) {
+            println(elem + " " + pieceWeights(elem))
+        }
         // val pieceWeights = pieces.map(_.toSet.size)
         // each node in a piece has same treeIds so just pick any one
         val hePinCount = pieces.map { p => idToTreeID(p.head).size } //  计算每个piece中属于同一个tree的节点数量并存入hePinCount
