@@ -365,7 +365,7 @@ class PartGraph extends StatementGraph {
         val pieceWeights = pieces.map(calculatePieceWeight) //  对所有piece进行权重计算
         // cxp
         for (elem <- pieceWeights.indices) {
-            println(elem + " " + pieceWeights(elem))
+            println("piece" + elem + ": " + pieceWeights(elem))
         }
         // val pieceWeights = pieces.map(_.toSet.size)
         // each node in a piece has same treeIds so just pick any one
