@@ -348,8 +348,8 @@ class PartGraph extends StatementGraph {
 
                 val currentWeight = idToNodeWeight(sinkId)
                 // cxp
-                println("sinkID: " + sinkId)
-                println(currentWeight)
+//                println("sinkID: " + sinkId)
+//                println(currentWeight)
 
                 currentWeight + ((inNeigh(sinkId) filter validNodes filter piece) map stmtWeight).sum
             }
