@@ -347,6 +347,9 @@ class PartGraph extends StatementGraph {
 
 
                 val currentWeight = idToNodeWeight(sinkId)
+                // cxp
+                println("sinkID: " + sinkId)
+                println(currentWeight)
 
                 currentWeight + ((inNeigh(sinkId) filter validNodes filter piece) map stmtWeight).sum
             }
@@ -546,7 +549,12 @@ class ThreadPartitioner(pg: PartGraph, opt: OptFlags) extends LazyLogging {
         println(pg.idToTreeID)
         println(pg.pieces)
         println(pg.nameToID)
-        pg.sinkNodes.zipWithIndex.foreach{
+        pg.idToStmt.zipWithIndex.foreach {
+            case (stmt, id) => {
+                println(id + " " + stmt)
+            }
+        }
+        pg.sinkNodes.zipWithIndex.foreach {
             case (sinkNode, pid) => {
                 println(sinkNode + " " + pid)
             }
