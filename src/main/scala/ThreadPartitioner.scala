@@ -298,6 +298,7 @@ class PartGraph extends StatementGraph {
 
             case c: Connect => {
                 val valueWeight = exprWeight(c.expr)
+                println(c.expr)
                 val declWeight = c.loc.tpe match {
                     case UIntType(IntWidth(w)) => if (w <= 64) 2 else (w.toInt + 63) / 64 + 1
                     case SIntType(IntWidth(w)) => if (w <= 64) 2 else (w.toInt + 63) / 64 + 1
