@@ -304,8 +304,8 @@ class PartGraph extends StatementGraph {
                     case AsyncResetType => 2
                     case _ => 0
                 }
+                println(c.expr + " " + valueWeight + " " + declWeight)
                 declWeight + valueWeight
-                println(c.expr + " " + valueWeight + declWeight)
             }
 
             case d: DefNode => {
