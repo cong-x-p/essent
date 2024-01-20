@@ -305,6 +305,7 @@ class PartGraph extends StatementGraph {
                     case _ => 0
                 }
                 println(c.expr + " " + valueWeight + " " + declWeight)
+                println(c.loc.tpe)
                 declWeight + valueWeight
             }
 
