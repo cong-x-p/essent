@@ -373,10 +373,6 @@ class PartGraph extends StatementGraph {
         // val pieceWeights = pieces.map(_.toSet.size)
         // each node in a piece has same treeIds so just pick any one
         val hePinCount = pieces.map { p => idToTreeID(p.head).size } //  计算每个piece中属于同一个tree的节点数量并存入hePinCount
-        for (elem <- hePinCount) {
-            println(hePinCount(elem))
-        }
-
 
         // Add nodes
         for (elem <- trees.indices) {
@@ -391,6 +387,10 @@ class PartGraph extends StatementGraph {
 
             // cxp
             println("elem: " + elem + " nodeweight: " + weight + connectPieceWeights.sum)
+            for (elem <- connectPieces.indices) {
+                println(connectPieces(elem))
+            }
+
 
             hg.addNode(elem, weight + connectPieceWeights.sum)
         } //  遍历trees中的所有节点，weight为一部分子树（构成piece）的权重，connectPieces包含了当前子树中包含的所有pieces，因为pieces中的节点可能有重合
