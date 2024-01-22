@@ -373,6 +373,8 @@ class PartGraph extends StatementGraph {
         // val pieceWeights = pieces.map(_.toSet.size)
         // each node in a piece has same treeIds so just pick any one
         val hePinCount = pieces.map { p => idToTreeID(p.head).size } //  计算每个piece中属于同一个tree的节点数量并存入hePinCount
+        println("hePinCount:")
+        println(hePinCount)
 
         // Add nodes
         for (elem <- trees.indices) {
@@ -388,7 +390,6 @@ class PartGraph extends StatementGraph {
             // cxp
             println("elem: " + elem)
             println(weight + connectPieceWeights.sum)
-            println(connectPieceWeights.sum)
             for (elem <- connectPieces.indices) {
                 println(connectPieces(elem))
             }
