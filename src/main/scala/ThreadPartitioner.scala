@@ -386,8 +386,8 @@ class PartGraph extends StatementGraph {
             }
 
             // cxp
-            println("elem: " + elem + " nodeweight: " + weight + connectPieceWeights.sum)
-            println(weight)
+            println("elem: " + elem)
+            println(weight + connectPieceWeights.sum)
             println(connectPieceWeights.sum)
             for (elem <- connectPieces.indices) {
                 println(connectPieces(elem))
