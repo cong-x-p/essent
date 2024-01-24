@@ -551,6 +551,7 @@ class ThreadPartitioner(pg: PartGraph, opt: OptFlags) extends LazyLogging {
         logger.info(s"KaHyPar spend $elapse_kahypar ms")
 
         logger.info("Parse result")
+        println("return file: " + metis_return_file)
         parseMetisResult(metis_return_file)
 
         val part_weights = parts.map(pg.calculatePieceWeight)
