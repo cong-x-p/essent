@@ -807,6 +807,8 @@ class ThreadPartitioner(pg: PartGraph, opt: OptFlags) extends LazyLogging {
         }
         }
         println("partResult: " + partResult)
+        println("partCount: " + partCount)
+        println("parts: " + parts)
     }
 
 
